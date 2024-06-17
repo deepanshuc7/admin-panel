@@ -1,1 +1,1 @@
-## Switch to master branch for project https://github.com/deepanshuc7/admin-panel/tree/master
+## Switch to master branch for LAVAREL project https://github.com/deepanshuc7/admin-panel/tree/master
