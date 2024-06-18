@@ -11,18 +11,21 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+    <body>
+        <div class="min-vh-100 bg-light">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="container py-6">
                         {{ $header }}
                     </div>
                 </header>
@@ -31,24 +34,29 @@
             <!-- Page Content -->
 
             <!-- Add this part to show admin link if the user is an admin -->
-        @auth
-            @if(Auth::user()->is_admin)  
-                <div class="container mx-auto py-6 flex justify-center items-center">
-                    <li class="nav-item " style="list-style: none">
-                        <a class="nav-link btn btn-primary btn-lg" href="{{ route('admin.index') }}" style="padding: 12px 20px; font-size: 30px;">HELLO ADMININSTRATOR, here is the <span style="color:blue">LINK TO ADMIN PANEL</span></a>
-                    </li>
-                </div>
-            @endif
-        @endauth
+            @auth
+                @if(Auth::user()->is_admin)  
+                    <div class="container py-6 d-flex justify-content-center align-items-center">
+                        <li class="nav-item list-unstyled">
+                            <a class="nav-link btn btn-primary btn-lg" href="{{ route('admin.index') }}" style="padding: 12px 20px; font-size: 30px;">
+                                HELLO ADMINISTRATOR, here is the <span style="color: blue;">LINK TO ADMIN PANEL</span>
+                            </a>
+                        </li>
+                    </div>
+                @endif
+            @endauth
          
-
-        <main>
-            @hasSection('content')
-                @yield('content')
-            @else
-                {{ $slot }}
-            @endif
-        </main>
+            <main>
+                @hasSection('content')
+                    @yield('content')
+                @else
+                    {{ $slot }}
+                @endif
+            </main>
         </div>
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
     </body>
 </html>
