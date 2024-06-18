@@ -1,3 +1,16 @@
+Mail feature added in the project post deployment
+
+
+![Screenshot 2024-06-16 150555](https://github.com/deepanshuc7/admin-panel/assets/61338791/393a60b1-f44c-419a-9491-023b3ba7bb81)
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
